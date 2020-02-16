@@ -1,0 +1,106 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Box.gd" type="Script" id=1]
+[ext_resource path="res://animations/jada_walk/stand1.png" type="Texture" id=2]
+[ext_resource path="res://animations/jada_walk/walkf2.png" type="Texture" id=3]
+[ext_resource path="res://animations/rat/ratstand1.png" type="Texture" id=4]
+[ext_resource path="res://animations/mich_walk/stand2.png" type="Texture" id=5]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Box" type="HSplitContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="Menu" type="VBoxContainer" parent="Box"]
+margin_right = 506.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MenuOptions" type="VBoxContainer" parent="Box/Menu"]
+margin_right = 506.0
+margin_bottom = 556.0
+size_flags_vertical = 3
+
+[node name="Title" type="TextureRect" parent="Box/Menu/MenuOptions"]
+margin_right = 506.0
+margin_bottom = 136.0
+size_flags_vertical = 3
+
+[node name="New Game" type="TextureRect" parent="Box/Menu/MenuOptions"]
+editor/display_folded = true
+margin_top = 140.0
+margin_right = 506.0
+margin_bottom = 276.0
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Box/Menu/MenuOptions/New Game"]
+margin_left = 100.0
+margin_top = 10.0
+margin_right = 240.0
+margin_bottom = 64.0
+text = "New Game"
+
+[node name="Continue" type="TextureRect" parent="Box/Menu/MenuOptions"]
+editor/display_folded = true
+margin_top = 280.0
+margin_right = 506.0
+margin_bottom = 416.0
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Box/Menu/MenuOptions/Continue"]
+margin_left = 100.0
+margin_top = 12.0
+margin_right = 160.0
+margin_bottom = 52.0
+text = "Continue"
+
+[node name="Exit" type="TextureRect" parent="Box/Menu/MenuOptions"]
+editor/display_folded = true
+margin_top = 420.0
+margin_right = 506.0
+margin_bottom = 556.0
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Box/Menu/MenuOptions/Exit"]
+margin_left = 80.0
+margin_right = 180.0
+margin_bottom = 34.0
+text = "Exit"
+
+[node name="Credits" type="TextureRect" parent="Box/Menu"]
+margin_top = 560.0
+margin_right = 506.0
+margin_bottom = 560.0
+
+[node name="Main" type="CenterContainer" parent="Box"]
+editor/display_folded = true
+margin_left = 518.0
+margin_right = 1024.0
+margin_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Box/Main"]
+margin_left = 221.0
+margin_top = 248.0
+margin_right = 285.0
+margin_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 32, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+[connection signal="gui_input" from="Box/Menu/MenuOptions/New Game" to="Box" method="_on_New_Game_gui_input"]
+[connection signal="gui_input" from="Box/Menu/MenuOptions/Continue" to="Box" method="_on_Continue_gui_input"]
+[connection signal="gui_input" from="Box/Menu/MenuOptions/Exit" to="Box" method="_on_Exit_gui_input"]
