@@ -1,2 +1,2 @@
-{"HP":10,"MaxHP":10,"XP":10,"cash":10,"filename":"res://Player.tscn","parent":"/root/street corner","player":"jada","pos_x":400.507568,"pos_y":814.61499,"unlocked":[true,true,false,true,false,false,false,false]}
-{"HP":8,"MaxHP":8,"XP":0,"filename":"res://Follower.tscn","follower":"mich","parent":"/root/street corner","pos_x":469.443115,"pos_y":801.012146}
+{"HP":10,"MaxHP":10,"cash":29,"filename":"res://Player.tscn","parent":"/root/street corner","player":"mich","pos_x":405.946777,"pos_y":4278.121582,"unlocked":[true,true,false,false,false,false,false,false]}
+{"HP":8,"MaxHP":8,"XP":0,"filename":"res://Follower.tscn","follower":"jada","parent":"/root/street corner","pos_x":405.957428,"pos_y":4355.183105}

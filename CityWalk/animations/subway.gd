@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var inputThing = "blech"
+var inputThing = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,3 +26,7 @@ func save():
 		var node_data = i.call("save")
 		save_game.store_line(to_json(node_data))
 	save_game.close()
+
+func _on_Area2D_body_exited(body):
+	if body.get_name() == "Player":
+		inputThing = 0

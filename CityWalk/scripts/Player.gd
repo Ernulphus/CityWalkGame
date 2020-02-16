@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 export (int) var HP = 10
-export (int) var XP = 0
 export (String) var player = "sam"
 var MaxHP = 10
 var cash
@@ -90,7 +89,6 @@ func save():
 		"pos_y" : position.y,
 		"MaxHP" : MaxHP,
 		"HP" : HP,
-		"XP" : XP,
 		"player" : player,
 		"cash" : cash,
 		"unlocked" : unlocked

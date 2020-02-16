@@ -19,5 +19,4 @@ func _on_PauseMenu_about_to_show():
 	var player = get_node("../Player")
 	print(player)
 	stats.add_text("HP: " + str(player.HP) + " / " + str(player.MaxHP))
-	stats.add_text("\nXP:" + str(player.XP))
 	stats.add_text("\n" + "$" + str(player.cash))

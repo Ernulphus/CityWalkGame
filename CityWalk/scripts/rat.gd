@@ -33,9 +33,6 @@ func _process(delta):
 		$Animation.play("stand")
 	
 	if HP <= 0:
-		get_node("../../Player").XP += 1
-		if get_node("../../Player").XP and !get_node("../../Player").unlocked[3]:
-			get_node("../../Player").unlocked[3] = true
 		var cn = load("res://coin.tscn").instance()
 		get_parent().add_child(cn)
 		cn.global_position = global_position
@@ -60,7 +57,3 @@ func _on_Area2D_body_entered(body):
 func hit(dmg):
 	HP -= dmg
 	hitTimer = 0.5
-#
-#func _on_Area2D_area_exited(area):
-#	if area.get_parent().get_name() == "bullet":
-#		hit = false

@@ -12,7 +12,7 @@ func _ready():
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta * speed)
 	if collision:
-		if collision.collider.get_name() == "TileMap" || collision.collider.get_name() == "subway":
+		if collision.collider.get_class() == "TileMap" || collision.collider.get_name() == "subway":
 			queue_free()
 	if piercer <= 0:
 		queue_free()
