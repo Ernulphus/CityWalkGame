@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var speed = 200
 export (int) var HP = 10
-export (String) var player = "sam"
+export (String) var player = "mich"
 var MaxHP = 10
 var cash
 onready var animation = get_node(player+"Animation")
@@ -81,20 +81,6 @@ func _physics_process(delta):
     get_input()
     velocity = move_and_slide(velocity)
 
-func save():
-	var save_data = {
-		"filename" : get_filename(),
-		"parent" : "/root/street corner",
-		"pos_x" : position.x,
-		"pos_y" : position.y,
-		"MaxHP" : MaxHP,
-		"HP" : HP,
-		"player" : player,
-		"cash" : cash,
-		"unlocked" : unlocked
-	}
-	return save_data
-	
 func switch():
 	var toBe = get_node("../Follower").follower
 	get_node("../Follower").follower = player
@@ -141,6 +127,28 @@ func hit(dmg):
 	
 func changeTo(character):
 	player = character
-	switch()
-	switch()
-	
+	for i in characters:
+		if i == player:
+			get_node(i + "Animation").show()
+		else:
+			get_node(i + "Animation").hide()
+
+func save():
+	var save_data = {
+		"filename" : get_filename(),
+		"parent" : "/root/street corner",
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+		"MaxHP" : MaxHP,
+		"HP" : HP,
+		"player" : player,
+		"cash" : cash,
+		"unlocked" : unlocked
+	}
+	return save_data
+
+func selectsave():
+	var save_data = {
+		"player" : player,
+	}
+	return save_data

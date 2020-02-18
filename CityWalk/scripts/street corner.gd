@@ -1,9 +1,7 @@
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	OS.set_window_size(Vector2(900,600))
-	
 	load_game()
 
 func load_game():
@@ -17,7 +15,9 @@ func load_game():
 	if not save_game.file_exists("res://saves/savegame.save"):
 		print("no previous save found")
 		add_child(load("res://Follower.tscn").instance())
+		$Follower.changeTo("jada")
 		add_child(load("res://Player.tscn").instance())
+		$Player.changeTo("mich")
 		return # We don't have a save to load.
 
     # Load the file line by line and process that dictionary to restore
@@ -25,9 +25,9 @@ func load_game():
 	save_game.open("res://saves/savegame.save", File.READ)
 	while not save_game.eof_reached():
 		var current_line = parse_json(save_game.get_line())
-		print(current_line)
 		# Firstly, we need to create the object and add it to the tree and set its position.
 		if current_line != null:
+			print(current_line)
 			var new_object = load(current_line["filename"]).instance()
 			#get_node(current_line["parent"]).
 			add_child(new_object)

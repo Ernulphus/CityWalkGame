@@ -1,0 +1,9 @@
+{
+  "1" : {"name":"mich", "text":"Sam? What are you doing here?"},
+  "2" : {"name":"sam", "text":"Shhh! You'll blow my cover!"},
+  "3" : {"name":"sam", "text":"I'm staking out these cops."},
+  "4" : {"name":"mich", "text":"I see. Jada and I are on an adventure"},
+  "5" : {"name":"mich", "text":"to rescue Boaz."},
+  "6" : {"name":"mich", "text":"If we help you kill some cops, will you join us?"},
+  "7" : {"name":"sam", "text":"Sounds like a deal. Let's go."}
+}

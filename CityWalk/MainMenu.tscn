@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Box.gd" type="Script" id=1]
-[ext_resource path="res://animations/jada_walk/stand1.png" type="Texture" id=2]
-[ext_resource path="res://animations/jada_walk/walkf2.png" type="Texture" id=3]
+[ext_resource path="res://animations/jada/stand1.png" type="Texture" id=2]
+[ext_resource path="res://animations/jada/walkf2.png" type="Texture" id=3]
 [ext_resource path="res://animations/rat/ratstand1.png" type="Texture" id=4]
-[ext_resource path="res://animations/mich_walk/stand2.png" type="Texture" id=5]
+[ext_resource path="res://animations/mich/stand2.png" type="Texture" id=5]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0

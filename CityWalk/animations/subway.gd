@@ -14,7 +14,6 @@ func _on_Area2D_body_entered(body):
 func _input(event):
 	if event is InputEventKey and event.scancode == KEY_SPACE and typeof(inputThing) == TYPE_OBJECT:
 		if inputThing.get_name() == "Player":
-			save()
 			print("going to charselect")
 			get_tree().change_scene("Character Select.tscn")
 	

@@ -1,14 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://animations/jadaAnimation.tscn" type="PackedScene" id=2]
 [ext_resource path="res://animations/michAnimation.tscn" type="PackedScene" id=3]
 [ext_resource path="res://animations/samAnimation.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sprites/circoutline.png" type="Texture" id=5]
+[ext_resource path="res://animations/kadeem/stand1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/circoutline.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 45.833
 height = 0.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "stand",
+"speed": 4.0
+} ]
 
 [node name="Player" type="KinematicBody2D" groups=[
 "Persist",
@@ -41,26 +50,16 @@ visible = false
 [node name="samAnimation" parent="." instance=ExtResource( 4 )]
 visible = false
 
-[node name="kadeemAnimation" parent="." instance=ExtResource( 4 )]
+[node name="kadeemAnimation" type="AnimatedSprite" parent="."]
 visible = false
-
-[node name="raznaAnimation" parent="." instance=ExtResource( 4 )]
-visible = false
-
-[node name="krisAnimation" parent="." instance=ExtResource( 4 )]
-visible = false
-
-[node name="sylviaAnimation" parent="." instance=ExtResource( 4 )]
-visible = false
-
-[node name="boazAnimation" parent="." instance=ExtResource( 4 )]
-visible = false
+frames = SubResource( 2 )
+animation = "stand"
 
 [node name="jadaBound" type="Sprite" parent="."]
 visible = false
 position = Vector2( 1.14441e-05, -1.14441e-05 )
 scale = Vector2( 6.15385, 6.15385 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -75,34 +74,42 @@ __meta__ = {
 visible = false
 position = Vector2( 4.99999, 10 )
 scale = Vector2( 3.53846, 3.38462 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="kadeemBound" type="Sprite" parent="."]
 visible = false
 position = Vector2( 4.99999, 10 )
 scale = Vector2( 3.53846, 3.38462 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="raznaBound" type="Sprite" parent="."]
 visible = false
 position = Vector2( 4.99999, 10 )
 scale = Vector2( 3.53846, 3.38462 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="krisBound" type="Sprite" parent="."]
 visible = false
 position = Vector2( 4.99999, 10 )
 scale = Vector2( 3.53846, 3.38462 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="sylviaBound" type="Sprite" parent="."]
 visible = false
 position = Vector2( 4.99999, 10 )
 scale = Vector2( 3.53846, 3.38462 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="boazBound" type="Sprite" parent="."]
 visible = false
 position = Vector2( 4.99999, 10 )
 scale = Vector2( 3.53846, 3.38462 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
+
+[node name="raznaAnimation" type="AnimatedSprite" parent="."]
+
+[node name="krisAnimation" type="AnimatedSprite" parent="."]
+
+[node name="sylviaAnimation" type="AnimatedSprite" parent="."]
+
+[node name="boazAnimation" type="AnimatedSprite" parent="."]

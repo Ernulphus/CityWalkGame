@@ -3,14 +3,10 @@ extends KinematicBody2D
 export (int) var speed
 var direction
 var target
-var MaxHP = 8
-var HP = MaxHP
-var XP = 0
 export (String) var follower = "jada"
 onready var animation = get_node(follower+"Animation")
 var turnTimer = 0.5
 var characters = ["mich", "jada", "sam", "kadeem", "razna", "kris", "sylvia", "boaz"]
-var unlocked = [true, true, false, false, false, false, false, false]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +14,7 @@ func _ready():
 	animation.play("stand")
 
 func _physics_process(delta):
+	
 	if get_node("../Player") != null:
 		target = get_node("../Player").position
 	turnTimer -= delta
@@ -46,24 +43,27 @@ func turn(dir):
 			animation.play("walkl")
 		if dir.x > 3.5:
 			animation.play("walkr")
-		
+
+func changeTo(character):
+	follower = character
+	for i in characters:
+		if i == follower:
+			get_node(i + "Animation").show()
+		else:
+			get_node(i + "Animation").hide()
+
 func save():
 	var save_data = {
 		"filename" : get_filename(),
 		"parent" : "/root/street corner",
 		"pos_x" : position.x,
 		"pos_y" : position.y,
-		"MaxHP" : MaxHP,
-		"HP" : HP,
-		"XP" : XP,
 		"follower" : follower
 	}
 	return save_data
-
-func changeTo(character):
-	follower = character
-	for i in characters:
-		if i == follower:
-			get_node("../Follower/" + i + "Animation").show()
-		else:
-			get_node("../Follower/" + i + "Animation").hide()
+	
+func selectsave():
+	var save_data = {
+		"follower" : follower
+	}
+	return save_data
